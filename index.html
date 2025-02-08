@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>thejoint.co</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="title-container">
+        <h1>The Joint</h1>
+    </div>
+    <div class="social-links">
+        <ul>
+            <li>
+                <a href="https://twitter.com/thejoint" target="_blank">
+                    <div class="icon-container">
+                        <img src="images/twitter.png" alt="Twitter">
+                    </div>
+                    <span class="link-text">Twitter</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://instagram.com/gramforthejoint" target="_blank">
+                    <div class="icon-container">
+                        <img src="images/instagram.png" alt="Instagram">
+                    </div>
+                    <span class="link-text">Instagram</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tiktok.com/@its_the_joint" target="_blank">
+                    <div class="icon-container">
+                        <img src="images/tik-tok.png" alt="TikTok">
+                    </div>
+                    <span class="link-text">TikTok</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://youtube.com/@its_the_joint" target="_blank">
+                    <div class="icon-container">
+                        <img src="images/youtube.png" alt="YouTube">
+                    </div>
+                    <span class="link-text">YouTube</span>
+            
+        </ul>
+    </div>
+    <script>
+    // Listen for any mouse movement on the page
+    document.addEventListener('mousemove', (e) => {
+        // Find our title container element
+        const title = document.querySelector('.title-container');
+        
+        // Get the exact position and size of title container
+        // This returns an object with: left, top, width, height
+        const { left, top, width, height } = title.getBoundingClientRect();
+        
+        // Calculate the center point of title
+        const centerX = left + width / 2;   // Horizontal center
+        const centerY = top + height / 2;    // Vertical center
+        
+        // Set how far the title can move (30 pixels)
+        const maxDistance = 30;
+        
+        // Calculate how far to move the title
+        // e.clientX/Y = current mouse position
+        // Divide by 10 to make movement smoother
+        // Math.max/min keeps movement within our 30px limit
+        const distanceX = Math.max(-maxDistance, Math.min(maxDistance, (e.clientX - centerX) / 10));
+        const distanceY = Math.max(-maxDistance, Math.min(maxDistance, (e.clientY - centerY) / 10));
+        
+        // Move the title
+        // We use negative distances to make it move away from cursor
+        // calc(50% + ${-distanceY}px) keeps the vertical centering while moving
+        title.style.transform = `translate(${-distanceX}px, calc(50% + ${-distanceY}px))`;
+    });
+    </script>
+</body>
+</html>

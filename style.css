@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff6e7f 0%, #bfe9ff 100%);
+    color: white;
+}
+
+.title-container {
+    position: relative;
+    padding: 20px;
+    width: fit-content;
+    margin: 0 auto;
+    transform: translateY(50%);
+}
+
+h1 {
+    text-align: center;
+    font-family: "Pattaya", sans-serif;
+    font-size: 100px;
+    text-shadow: 
+        2px 2px 0 #000,
+        4px 4px 0 rgba(0,0,0,0.2);
+    margin: 0;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(50%);
+    }
+    50% {
+        transform: translateY(40%);
+    }
+    100% {
+        transform: translateY(50%);
+    }
+}
+
+.social-links {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.social-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-links li {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.social-links .icon-container {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
+}
+
+.social-links .link-text {
+    font-family: "Pattaya", sans-serif;
+    font-size: 24px;
+}
